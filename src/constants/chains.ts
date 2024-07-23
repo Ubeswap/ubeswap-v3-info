@@ -1,20 +1,8 @@
 import { ChainId, SUPPORTED_CHAINS, SupportedChainsType } from '@uniswap/sdk-core'
 
 export const CHAIN_IDS_TO_NAMES = {
-  [ChainId.MAINNET]: 'mainnet',
-  [ChainId.GOERLI]: 'goerli',
-  [ChainId.SEPOLIA]: 'sepolia',
-  [ChainId.POLYGON]: 'polygon',
-  [ChainId.POLYGON_MUMBAI]: 'polygon_mumbai',
   [ChainId.CELO]: 'celo',
   [ChainId.CELO_ALFAJORES]: 'celo_alfajores',
-  [ChainId.ARBITRUM_ONE]: 'arbitrum',
-  [ChainId.ARBITRUM_GOERLI]: 'arbitrum_goerli',
-  [ChainId.OPTIMISM]: 'optimism',
-  [ChainId.OPTIMISM_GOERLI]: 'optimism_goerli',
-  [ChainId.BNB]: 'bnb',
-  [ChainId.AVALANCHE]: 'avalanche',
-  [ChainId.BASE]: 'base',
 } as const
 
 // Include ChainIds in this array if they are not supported by the UX yet, but are already in the SDK.
@@ -58,7 +46,7 @@ export const SUPPORTED_GAS_ESTIMATE_CHAIN_IDS = [
 /**
  * Supported networks for V2 pool behavior.
  */
-export const SUPPORTED_V2POOL_CHAIN_IDS = [ChainId.MAINNET, ChainId.GOERLI] as const
+export const SUPPORTED_V2POOL_CHAIN_IDS = [ChainId.MAINNET, ChainId.CELO] as const
 
 export const TESTNET_CHAIN_IDS = [
   ChainId.GOERLI,
@@ -107,28 +95,9 @@ export type SupportedL2ChainId = (typeof L2_CHAIN_IDS)[number]
  */
 export function getChainPriority(chainId: ChainId): number {
   switch (chainId) {
-    case ChainId.MAINNET:
-    case ChainId.GOERLI:
-    case ChainId.SEPOLIA:
-      return 0
-    case ChainId.ARBITRUM_ONE:
-    case ChainId.ARBITRUM_GOERLI:
-      return 1
-    case ChainId.OPTIMISM:
-    case ChainId.OPTIMISM_GOERLI:
-      return 2
-    case ChainId.POLYGON:
-    case ChainId.POLYGON_MUMBAI:
-      return 3
-    case ChainId.BASE:
-      return 4
-    case ChainId.BNB:
-      return 5
-    case ChainId.AVALANCHE:
-      return 6
     case ChainId.CELO:
     case ChainId.CELO_ALFAJORES:
-      return 7
+      return 0
     default:
       return 8
   }

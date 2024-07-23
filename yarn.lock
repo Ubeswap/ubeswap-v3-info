@@ -3600,6 +3600,11 @@
     "@typescript-eslint/types" "6.8.0"
     eslint-visitor-keys "^3.4.1"
 
+"@ubeswap/default-token-list@^4.1.66":
+  version "4.1.66"
+  resolved "https://registry.yarnpkg.com/@ubeswap/default-token-list/-/default-token-list-4.1.66.tgz#e18b26e7c9f0f7c35b63c96dcca4679790297957"
+  integrity sha512-kaiTl5Zwd7Tt6I0V9zZTtrEgw2lHeltyjcCEVxaHKy7JHlUhf4K/MBnoQPdznB3oGuO2fwV5BgDY9rtTEUdBBg==
+
 "@uniswap/analytics-events@^2.25.0":
   version "2.25.0"
   resolved "https://registry.yarnpkg.com/@uniswap/analytics-events/-/analytics-events-2.25.0.tgz#06f2d81342b2e4dc516bdfa1222ddaa7c274ac04"
@@ -3613,11 +3618,6 @@
     "@amplitude/analytics-browser" "^1.5.8"
     react "^18.2.0"
     react-dom "^18.2.0"
-
-"@uniswap/default-token-list@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@uniswap/default-token-list/-/default-token-list-2.0.0.tgz#095b4c22635e532c817c3ba70e8838d8bd699716"
-  integrity sha512-P37PqBtUjEB9DIRFfmEsgougkV0555JQKiGPISeN9UFk1UgCQM5sg6+bBaShiyaqEpdtttAaBFI1QESCzPGvXw==
 
 "@uniswap/governance@^1.0.2":
   version "1.0.2"

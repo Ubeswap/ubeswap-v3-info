@@ -49,7 +49,9 @@ export enum ExplorerDataType {
  * @param type the type of the data
  */
 export function getExplorerLink(chainId: number, data: string, type: ExplorerDataType): string {
-  const prefix = BLOCK_EXPLORER_PREFIXES[chainId] ?? 'https://etherscan.io'
+  const prefix = BLOCK_EXPLORER_PREFIXES[chainId] ?? 'https://celoscan.io'
+  console.log('prefix', prefix)
+  console.log('chainId', chainId)
 
   switch (type) {
     case ExplorerDataType.TRANSACTION:

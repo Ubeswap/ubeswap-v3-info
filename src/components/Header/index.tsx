@@ -2,7 +2,6 @@ import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { darken } from 'polished'
 import styled from 'styled-components'
-import LogoDark from '../../assets/svg/logo_white.svg'
 import Menu from '../Menu'
 import Row, { RowFixed, RowBetween } from '../Row'
 import SearchSmall from 'components/Search'
@@ -10,6 +9,9 @@ import NetworkDropdown from 'components/Menu/NetworkDropdown'
 import { useActiveNetworkVersion } from 'state/application/hooks'
 import { networkPrefix } from 'utils/networkPrefix'
 import { AutoColumn } from 'components/Column'
+import Icon from '../../assets/svg/icon.svg'
+import Logo from '../../assets/svg/logo-dark.svg'
+import { isMobile } from 'react-device-detect'
 
 const HeaderFrame = styled.div`
   display: grid;
@@ -158,8 +160,12 @@ export default function Header() {
     <HeaderFrame>
       <HeaderRow>
         <Title to={networkPrefix(activeNewtork)}>
-          <UniIcon>
-            <img width={'24px'} src={LogoDark} alt="logo" />
+          <UniIcon id="link">
+            {!isMobile ? (
+              <img width={'112px'} style={{ marginTop: '0px' }} src={Logo} alt="logo" />
+            ) : (
+              <img width={'24px'} src={Icon} alt="logo" />
+            )}
           </UniIcon>
         </Title>
         <HeaderLinks>

@@ -15,8 +15,8 @@ import PoolPage from './Pool/PoolPage'
 import { ExternalLink, TYPE } from 'theme'
 import { useActiveNetworkVersion, useSubgraphStatus } from 'state/application/hooks'
 import { DarkGreyCard } from 'components/Card'
-import { SUPPORTED_NETWORK_VERSIONS, EthereumNetworkInfo, OptimismNetworkInfo } from 'constants/networks'
-import { Link } from 'rebass'
+import { CeloNetworkInfo, OptimismNetworkInfo } from 'constants/networks'
+// import { Link } from 'rebass'
 
 const AppWrapper = styled.div`
   display: flex;
@@ -82,7 +82,7 @@ const WarningBanner = styled.div`
   font-weight: 500;
 `
 
-const UrlBanner = styled.div`
+/* const UrlBanner = styled.div`
   background-color: ${({ theme }) => theme.pink1};
   padding: 1rem 0.75rem;
   color: white;
@@ -95,7 +95,7 @@ const UrlBanner = styled.div`
 const Decorator = styled.span`
   text-decoration: underline;
   color: white;
-`
+` */
 
 const BLOCK_DIFFERENCE_THRESHOLD = 30
 
@@ -111,15 +111,16 @@ export default function App() {
   const location = useLocation()
   const [activeNetwork, setActiveNetwork] = useActiveNetworkVersion()
   useEffect(() => {
-    if (location.pathname === '/') {
-      setActiveNetwork(EthereumNetworkInfo)
-    } else {
-      SUPPORTED_NETWORK_VERSIONS.map((n) => {
-        if (location.pathname.includes(n.route.toLocaleLowerCase())) {
-          setActiveNetwork(n)
-        }
-      })
-    }
+    setActiveNetwork(CeloNetworkInfo)
+    // if (location.pathname === '/') {
+    //   setActiveNetwork(EthereumNetworkInfo)
+    // } else {
+    //   SUPPORTED_NETWORK_VERSIONS.map((n) => {
+    //     if (location.pathname.includes(n.route.toLocaleLowerCase())) {
+    //       setActiveNetwork(n)
+    //     }
+    //   })
+    // }
   }, [location.pathname, setActiveNetwork])
 
   // subgraph health
@@ -148,12 +149,12 @@ export default function App() {
               </BannerWrapper>
             )}
             <BannerWrapper>
-              <UrlBanner>
+              {/* <UrlBanner>
                 {`info.uniswap.org is being deprecated on June 11th. Explore the new combined V2 and V3 analytics at `}
                 <Link href={'https://app.uniswap.org/explore'}>
                   <Decorator>app.uniswap.org</Decorator>
                 </Link>
-              </UrlBanner>
+              </UrlBanner> */}
             </BannerWrapper>
             <Hide1080>
               <TopBar />
@@ -167,7 +168,7 @@ export default function App() {
                   <TYPE.label>
                     The Graph hosted network which provides data for this site is temporarily experiencing issues. Check
                     current status{' '}
-                    <ExternalLink href="https://thegraph.com/hosted-service/subgraph/uniswap/uniswap-v3">
+                    <ExternalLink href="https://thegraph.com/explorer/subgraphs/HsmR9eEf8v77bGBgpHMNbLh36Z1kkeMc654YWDepNcNf">
                       here.
                     </ExternalLink>
                   </TYPE.label>

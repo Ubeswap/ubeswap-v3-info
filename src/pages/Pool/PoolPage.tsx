@@ -166,7 +166,7 @@ function PoolPage({ address }: { address: string }) {
               </AutoRow>
               <RowFixed gap="10px" align="center">
                 <SavedIcon fill={savedPools.includes(address)} onClick={() => addSavedPool(address)} />
-                <StyledExternalLink href={getExplorerLink(ChainId.MAINNET, address, ExplorerDataType.ADDRESS)}>
+                <StyledExternalLink href={getExplorerLink(ChainId.CELO, address, ExplorerDataType.ADDRESS)}>
                   <ExternalLink stroke={theme?.text2} size={'17px'} style={{ marginLeft: '12px' }} />
                 </StyledExternalLink>
               </RowFixed>
@@ -215,7 +215,7 @@ function PoolPage({ address }: { address: string }) {
               {activeNetwork !== EthereumNetworkInfo ? null : (
                 <RowFixed>
                   <StyledExternalLink
-                    href={`https://app.uniswap.org/#/add/${poolData.token0.address}/${poolData.token1.address}/${poolData.feeTier}`}
+                    href={`https://app.ubeswap.org/#/add/${poolData.token0.address}/${poolData.token1.address}/${poolData.feeTier}`}
                   >
                     <ButtonGray width="170px" mr="12px" style={{ height: '44px' }}>
                       <RowBetween>
@@ -225,7 +225,7 @@ function PoolPage({ address }: { address: string }) {
                     </ButtonGray>
                   </StyledExternalLink>
                   <StyledExternalLink
-                    href={`https://app.uniswap.org/#/swap?inputCurrency=${poolData.token0.address}&outputCurrency=${poolData.token1.address}`}
+                    href={`https://app.ubeswap.org/#/swap?inputCurrency=${poolData.token0.address}&outputCurrency=${poolData.token1.address}`}
                   >
                     <ButtonPrimary width="100px" style={{ height: '44px' }}>
                       Trade

@@ -1,6 +1,6 @@
 {
-  "name": "@uniswap/interface",
-  "description": "Uniswap Interface",
+  "name": "@ubeswap/ubeswap-v3-info",
+  "description": "Ubeswap V3 Analytics",
   "homepage": ".",
   "private": true,
   "devDependencies": {
@@ -131,9 +131,9 @@
     "@types/ms": "^0.7.33",
     "@types/numeral": "^2.0.1",
     "@types/ua-parser-js": "^0.7.38",
+    "@ubeswap/default-token-list": "^4.1.66",
     "@uniswap/analytics": "^1.6.0",
     "@uniswap/analytics-events": "^2.25.0",
-    "@uniswap/default-token-list": "^2.0.0",
     "apollo-cache-inmemory": "^1.6.6",
     "apollo-client": "^2.6.10",
     "apollo-link-http": "^1.5.17",
@@ -150,5 +150,6 @@
     "ua-parser-js": "^1.0.36",
     "uifx": "^2.0.7",
     "yarn-deduplicate": "^6.0.2"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

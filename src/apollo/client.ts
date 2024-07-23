@@ -5,48 +5,48 @@ export const healthClient = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
-export const blockClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
-  cache: new InMemoryCache(),
-  queryDeduplication: true,
-  defaultOptions: {
-    watchQuery: {
-      fetchPolicy: 'no-cache',
-    },
-    query: {
-      fetchPolicy: 'no-cache',
-      errorPolicy: 'all',
-    },
-  },
-})
+// export const blockClient = new ApolloClient({
+//   uri: 'https://api.thegraph.com/subgraphs/name/blocklytics/ethereum-blocks',
+//   cache: new InMemoryCache(),
+//   queryDeduplication: true,
+//   defaultOptions: {
+//     watchQuery: {
+//       fetchPolicy: 'no-cache',
+//     },
+//     query: {
+//       fetchPolicy: 'no-cache',
+//       errorPolicy: 'all',
+//     },
+//   },
+// })
 
-export const client = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3?source=uniswap',
-  cache: new InMemoryCache({
-    typePolicies: {
-      Token: {
-        // Singleton types that have no identifying field can use an empty
-        // array for their keyFields.
-        keyFields: false,
-      },
-      Pool: {
-        // Singleton types that have no identifying field can use an empty
-        // array for their keyFields.
-        keyFields: false,
-      },
-    },
-  }),
-  queryDeduplication: true,
-  defaultOptions: {
-    watchQuery: {
-      fetchPolicy: 'no-cache',
-    },
-    query: {
-      fetchPolicy: 'no-cache',
-      errorPolicy: 'all',
-    },
-  },
-})
+// export const client = new ApolloClient({
+//   uri: 'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3?source=uniswap',
+//   cache: new InMemoryCache({
+//     typePolicies: {
+//       Token: {
+//         // Singleton types that have no identifying field can use an empty
+//         // array for their keyFields.
+//         keyFields: false,
+//       },
+//       Pool: {
+//         // Singleton types that have no identifying field can use an empty
+//         // array for their keyFields.
+//         keyFields: false,
+//       },
+//     },
+//   }),
+//   queryDeduplication: true,
+//   defaultOptions: {
+//     watchQuery: {
+//       fetchPolicy: 'no-cache',
+//     },
+//     query: {
+//       fetchPolicy: 'no-cache',
+//       errorPolicy: 'all',
+//     },
+//   },
+// })
 
 export const avalancheClient = new ApolloClient({
   uri: 'https://api.thegraph.com/subgraphs/name/lynnshaoyu/uniswap-v3-avax?source=uniswap',
@@ -307,7 +307,7 @@ export const polygonBlockClient = new ApolloClient({
 })
 
 export const celoClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/jesse-sawa/uniswap-celo?source=uniswap',
+  uri: 'https://gateway-arbitrum.network.thegraph.com/api/c01ff53a73ffd972f79bbf61456fcb73/subgraphs/id/HsmR9eEf8v77bGBgpHMNbLh36Z1kkeMc654YWDepNcNf',
   cache: new InMemoryCache({
     typePolicies: {
       Token: {
@@ -334,8 +334,10 @@ export const celoClient = new ApolloClient({
   },
 })
 
+export const client = celoClient
+
 export const celoBlockClient = new ApolloClient({
-  uri: 'https://api.thegraph.com/subgraphs/name/jesse-sawa/celo-blocks',
+  uri: 'https://gateway-arbitrum.network.thegraph.com/api/c01ff53a73ffd972f79bbf61456fcb73/subgraphs/id/5Uhq8XrBsxdRwMKBNXcp4GuHp1SRmqPK5hgCCMqxDxhB',
   cache: new InMemoryCache(),
   queryDeduplication: true,
   defaultOptions: {
@@ -348,3 +350,5 @@ export const celoBlockClient = new ApolloClient({
     },
   },
 })
+
+export const blockClient = celoBlockClient

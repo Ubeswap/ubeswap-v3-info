@@ -8,7 +8,6 @@ import {
 } from 'constants/networks'
 import useTheme from 'hooks/useTheme'
 import React, { useState, useRef } from 'react'
-import { ChevronDown } from 'react-feather'
 import { useActiveNetworkVersion } from 'state/application/hooks'
 import styled from 'styled-components'
 import { StyledInternalLink, TYPE } from 'theme'
@@ -28,7 +27,6 @@ const Wrapper = styled.div`
   margin-right: 12px;
 
   :hover {
-    cursor: pointer;
     opacity: 0.7;
   }
 `
@@ -98,7 +96,7 @@ export default function NetworkDropdown() {
 
   return (
     <Container ref={node}>
-      <Wrapper onClick={() => setShowMenu(!showMenu)}>
+      <Wrapper>
         <RowFixed>
           <LogoWrapper src={activeNetwork.imageURL} />
           <TYPE.main fontSize="14px" color={theme?.white} ml="8px" mt="-2px" mr="2px" style={{ whiteSpace: 'nowrap' }}>
@@ -111,7 +109,6 @@ export default function NetworkDropdown() {
               L2
             </Badge>
           )}
-          <ChevronDown size="20px" />
         </RowFixed>
       </Wrapper>
       {showMenu && (

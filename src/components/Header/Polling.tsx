@@ -87,7 +87,7 @@ export default function Polling() {
 
   return (
     <ExternalLink
-      href={latestBlock ? getExplorerLink(ChainId.MAINNET, latestBlock.toString(), ExplorerDataType.BLOCK) : ''}
+      href={latestBlock ? getExplorerLink(ChainId.CELO, latestBlock.toString(), ExplorerDataType.BLOCK) : ''}
     >
       <StyledPolling>
         <TYPE.small mr="4px" color={theme?.text3}>
