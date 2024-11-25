@@ -1,4 +1,4 @@
-import { getVersionUpgrade, minVersionBump, VersionUpgrade } from '@uniswap/token-lists'
+import { getVersionUpgrade, /*minVersionBump,*/ VersionUpgrade } from '@uniswap/token-lists'
 import { UBE_LIST, UNSUPPORTED_LIST_URLS } from 'constants/lists'
 import { useCallback, useEffect } from 'react'
 import { useAllLists } from 'state/lists/hooks'
@@ -61,16 +61,16 @@ export default function Updater(): null {
             throw new Error('unexpected no version bump')
           case VersionUpgrade.PATCH:
           case VersionUpgrade.MINOR:
-            const min = minVersionBump(list.current.tokens, list.pendingUpdate.tokens)
-            // automatically update minor/patch as long as bump matches the min update
-            if (bump >= min) {
-              dispatch(acceptListUpdate(listUrl))
-            } else {
-              console.error(
-                `List at url ${listUrl} could not automatically update because the version bump was only PATCH/MINOR while the update had breaking changes and should have been MAJOR`,
-              )
-            }
-            break
+          // const min = minVersionBump(list.current.tokens, list.pendingUpdate.tokens)
+          // // automatically update minor/patch as long as bump matches the min update
+          // if (bump >= min) {
+          //   dispatch(acceptListUpdate(listUrl))
+          // } else {
+          //   console.error(
+          //     `List at url ${listUrl} could not automatically update because the version bump was only PATCH/MINOR while the update had breaking changes and should have been MAJOR`,
+          //   )
+          // }
+          // break
 
           // update any active or inactive lists
           case VersionUpgrade.MAJOR:
